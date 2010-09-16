@@ -41,15 +41,15 @@
   return self;
 }
 
--(id) initWithString: (char *) str inBase: (int) base
+-(id) initWithString: (NSString *) str inBase: (int) base
 {
   [self init];
   mpz_clear( _contents );
-  mpz_init_set_str( _contents, str, base );
+  mpz_init_set_str( _contents, [str UTF8String], base );
   return self;
 }
 
--(id) initWithString: (char *) str
+-(id) initWithString: (NSString *) str
 {
   /* When mpz_set_str recieves 0 for base, it guesses based on the content of
    * the string (see Init.h or gmp documentation) */
@@ -74,12 +74,12 @@
   return [[self alloc] initWithUnsignedInt: op];
 }
 
-+(id) mpIntegerWithString: (char *) str inBase: (int) base
++(id) mpIntegerWithString: (NSString *) str inBase: (int) base
 {
   return [[self alloc] initWithString: str inBase: base];
 }
 
-+(id) mpIntegerWithString: (char *) str
++(id) mpIntegerWithString: (NSString *) str
 {
   return [[self alloc] initWithString: str];
 }

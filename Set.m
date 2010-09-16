@@ -22,16 +22,16 @@
   mpz_set_ui( *[self mutableContentsPointer], op );
 }
 
--(void) setWithString: (char *) str
+-(void) setWithString: (NSString *) str
 {
   /* When mpz_set_str recieves 0 for base, it guesses based on the content of
    * the string (see Set.h or gmp documentation) */
   [self setWithString: str inBase: 0];
 }
 
--(void) setWithString: (char *) str inBase: (int) base
+-(void) setWithString: (NSString *) str inBase: (int) base
 {
-  mpz_set_str( *[self mutableContentsPointer], str, base );
+  mpz_set_str( *[self mutableContentsPointer], [str UTF8String], base );
 }
 
 @end

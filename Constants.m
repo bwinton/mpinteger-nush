@@ -27,7 +27,7 @@
   MPMutableInteger *temp = [MPMutableInteger mpIntegerWithUnsignedInt: 10];
   [temp raiseToExponentUnsignedInt: 100];
   id answer = [self mpIntegerWithMPInteger: temp];
-  [temp free];
+  [temp release];
   return answer;
 }
 

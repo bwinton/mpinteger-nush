@@ -37,8 +37,8 @@
 /* string value: These methods return the value of the MPInteger as a character
  * array (c style string). If no base is given, 10 is assumed. Useful for
  * printing large MPIntegers until the Display category is done. */
--(char *) stringValue;
--(char *) stringValueInBase: (int) base;
+-(NSString *) stringValue;
+-(NSString *) stringValueInBase: (int) base;
 
 @end
 

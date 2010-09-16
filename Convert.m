@@ -27,14 +27,15 @@
   return mpz_get_d( *[self contentsPointer] );
 }
 
--(char *) stringValue
+-(NSString *) stringValue
 {
   return [self stringValueInBase: 10];
 }
 
--(char *) stringValueInBase: (int) base
+-(NSString *) stringValueInBase: (int) base
 {
-  return mpz_get_str( NULL, base, *[self contentsPointer] );
+  return [NSString stringWithCString: mpz_get_str( NULL, base, *[self contentsPointer] )
+                   encoding: NSASCIIStringEncoding];
 }
 
 @end
@@ -44,9 +45,9 @@
 -(void) makeImmutable
 {
   MPInteger *temp = [[MPInteger alloc] initWithMPInteger: self];
-  [self free];
+  [self release];
   self = [[MPInteger alloc] initWithMPInteger: temp];
-  [temp free];
+  [temp release];
 }
 
 @end

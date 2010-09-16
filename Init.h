@@ -30,8 +30,8 @@
 /* Initialize with an integer given as a string. If no base is given, it is
  * chosen by the first characters of the string: "0x" or "0X" indicates 16,
  * "0b" or 0B" for 2, or "0" for 8. Otherwise, 10 is used. */
--(id) initWithString: (char *) str inBase: (int) base;
--(id) initWithString: (char *) str;
+-(id) initWithString: (NSString *) str inBase: (int) base;
+-(id) initWithString: (NSString *) str;
 
 /* Initialize with the value from a mpz_t. Generally not useful externally, I
  * imagine, as people generally don't want to use mpz_t crap or they wouldn't
@@ -41,8 +41,8 @@
 /* Allocate and initialize using the same cases as above. */
 +(id) mpIntegerWithMPInteger: (MPInteger *) op;
 +(id) mpIntegerWithUnsignedInt: (unsigned long int) op;
-+(id) mpIntegerWithString: (char *) str inBase: (int) base;
-+(id) mpIntegerWithString: (char *) str;
++(id) mpIntegerWithString: (NSString *) str inBase: (int) base;
++(id) mpIntegerWithString: (NSString *) str;
 +(id) mpIntegerWithMpz: (mpz_t) op;
 
 @end

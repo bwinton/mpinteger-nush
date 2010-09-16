@@ -7,25 +7,26 @@
  * Written by Bill Garrison
  * Last changed 2008 Dec 21
  *
- * This file declares the MPInteger class and provides methods alloc and free.
+ * This file declares the MPInteger class and provides methods alloc and dealloc.
  */
 
 #import <stdio.h>
-#import <objc/Object.h>
+#import <Foundation/Foundation.h>
 #import <gmp.h>
 
 /* MPInteger class
  * The only data in a MPInteger object is the mpz_t. It holds the integer
  * value and is controlled by the gmp library. */
-@interface MPInteger: Object
+@interface MPInteger: NSObject
 {
 @protected
   mpz_t _contents;
 }
 
-/* standard methods alloc and free */
+/* standard methods alloc and dealloc */
 +(id) alloc;
--(id) free;
+-(void) dealloc;
+-(NSString *) help;
 
 @end
 

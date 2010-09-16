@@ -19,16 +19,26 @@
   return [super alloc];
 }
 
--(id) free
+-(void) dealloc
 {
   /* free the data in the mpz_t before letting the MPInteger go */
   mpz_clear( _contents );
-  return [super free];
+  [super dealloc];
+}
+
+- (NSString *) help
+{
+  return @"This is an instance of MPInteger";
 }
 
 @end
 
 @implementation MPMutableInteger
+
+- (NSString *) help
+{
+  return @"This is an instance of MPInteger";
+}
 
 @end
 

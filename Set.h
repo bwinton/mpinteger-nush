@@ -25,8 +25,8 @@
 /* setting with string: if no base is given, it is chosen by the first
  * characters of the string: "0x" or "0X" indicates 16, "0b" or 0B" for 2,
  * or "0" for 8. Otherwise, 10 is used. */
--(void) setWithString: (char *) str;
--(void) setWithString: (char *) str inBase: (int) base;
+-(void) setWithString: (NSString *) str;
+-(void) setWithString: (NSString *) str inBase: (int) base;
 
 @end
 
