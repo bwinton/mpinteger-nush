@@ -33,9 +33,9 @@
  * methods, calling the one that is appropriate based on the 'exactly'
  * boolean. */
 -(id) mpIntegerByDividingMPInteger: (MPInteger *) op
-                           exactly: (_Bool) ex;
+                           exactly: (BOOL) ex;
 -(id) mpIntegerByDividingUnsignedInt: (unsigned long int) op
-                             exactly: (_Bool) ex;
+                             exactly: (BOOL) ex;
 
 /* modulo: These methods return a new MPInteger containing the value of an
  * equivalent MPInteger in the modulo set specified in the argument. */
@@ -45,8 +45,8 @@
 /* divisibility: These methods check divisibility by the following logic: they
  * return YES if there exists an integer q such that n = qd (n being the
  * reciever and d being the argument). */
--(_Bool) isDivisibleByMPInteger: (MPInteger *) op;
--(_Bool) isDivisibleByUnsignedInt: (unsigned long int) op;
+-(BOOL) isDivisibleByMPInteger: (MPInteger *) op;
+-(BOOL) isDivisibleByUnsignedInt: (unsigned long int) op;
 
 @end
 
@@ -66,9 +66,9 @@
 /* adjustable division: These methods are interfaces to the two types of
  * division, as in the immutable case. */
 -(void) divideMPInteger: (MPInteger *) op
-                exactly: (_Bool) ex;
+                exactly: (BOOL) ex;
 -(void) divideUnsignedInt: (unsigned long int) op
-                  exactly: (_Bool) ex;
+                  exactly: (BOOL) ex;
 
 /* modulo: These methods execute the modulo operation on the MPInteger. */
 -(void) moduloMPInteger: (MPInteger *) op;

@@ -21,7 +21,7 @@
  * value as the MPInteger. If the value will not fit into a signed int,
  * something mostly pointless is returned. If you want to know if it can fit,
  * hold tight. Someday soon the Fits category will (hopefully) be coming,
- * unveiling such functions as -(_Bool) fitsInInt: etc. */
+ * unveiling such functions as -(BOOL) fitsInInt: etc. */
 -(signed long int) intValue;
 
 /* unsigned int value: This method returns an unsigned long int with the same

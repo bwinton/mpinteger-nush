@@ -33,7 +33,7 @@
 }
 
 -(id) mpIntegerByDividingMPInteger: (MPInteger *) op
-                           exactly: (_Bool) ex
+                           exactly: (BOOL) ex
 {
   mpz_t temp;
   mpz_init( temp );
@@ -47,7 +47,7 @@
 }
 
 -(id) mpIntegerByDividingUnsignedInt: (unsigned long int) op
-                             exactly: (_Bool) ex
+                             exactly: (BOOL) ex
 {
   mpz_t temp;
   mpz_init( temp );
@@ -80,7 +80,7 @@
   return answer;
 }
 
--(_Bool) isDivisibleByMPInteger: (MPInteger *) op
+-(BOOL) isDivisibleByMPInteger: (MPInteger *) op
 {
   if( mpz_divisible_p( *[self contentsPointer], *[op contentsPointer] ) == 0 )
     return NO;
@@ -88,7 +88,7 @@
     return YES;
 }
 
--(_Bool) isDivisibleByUnsignedInt: (unsigned long int) op
+-(BOOL) isDivisibleByUnsignedInt: (unsigned long int) op
 {
   if( mpz_divisible_ui_p( *[self contentsPointer], op ) == 0 )
     return NO;
@@ -121,7 +121,7 @@
 }
 
 -(void) divideMPInteger: (MPInteger *) op
-                exactly: (_Bool) ex
+                exactly: (BOOL) ex
 {
   if( ex )
     mpz_divexact( *[self mutableContentsPointer], *[self contentsPointer],
@@ -132,7 +132,7 @@
 }
 
 -(void) divideUnsignedInt: (unsigned long int) op
-                exactly: (_Bool) ex
+                exactly: (BOOL) ex
 {
   if( ex )
     mpz_divexact_ui( *[self mutableContentsPointer], *[self contentsPointer],

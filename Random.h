@@ -16,7 +16,7 @@
 #import <time.h>
 
 static gmp_randstate_t _mpiRandomState;
-static _Bool _mpiRandomStateInitialized = NO;
+static BOOL _mpiRandomStateInitialized = NO;
 
 @interface MPInteger (Random)
 

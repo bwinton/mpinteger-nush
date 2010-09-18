@@ -12,12 +12,12 @@
 
 @implementation MPInteger (NumberTheory)
 
--(_Bool) isProbablyPrime
+-(BOOL) isProbablyPrime
 {
   return [self isProbablyPrimeAfterIterating: MPI_DEFAULT_PRIME_REPS];
 }
 
--(_Bool) isProbablyPrimeAfterIterating: (unsigned int) reps
+-(BOOL) isProbablyPrimeAfterIterating: (unsigned int) reps
 {
   if( mpz_probab_prime_p( *[self contentsPointer], reps ) > 0 )
     return YES;

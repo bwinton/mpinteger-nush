@@ -18,9 +18,9 @@
 
 @interface MPInteger (NumberTheory)
 
--(_Bool) isProbablyPrime;
+-(BOOL) isProbablyPrime;
 
--(_Bool) isProbablyPrimeAfterIterating: (unsigned int) reps;
+-(BOOL) isProbablyPrimeAfterIterating: (unsigned int) reps;
 
 -(id) mpIntegerByInverseModulo: (MPInteger *) mod;
 

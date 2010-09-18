@@ -30,7 +30,7 @@ MPIComparisonResult;
 -(MPIComparisonResult) compare: (MPInteger *) other;
 
 /* equal: returns true if caller and other are equal, false otherwise. */
--(_Bool) isEqualToMPInteger: (MPInteger *) other;
+-(BOOL) isEqualToMPInteger: (MPInteger *) other;
 
 @end
 

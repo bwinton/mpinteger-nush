@@ -22,7 +22,7 @@
     return MPIOrderedSame;
 }
 
--(_Bool) isEqualToMPInteger: (MPInteger *) other
+-(BOOL) isEqualToMPInteger: (MPInteger *) other
 {
   return ( [self compare: other] == MPIOrderedSame );
 }
